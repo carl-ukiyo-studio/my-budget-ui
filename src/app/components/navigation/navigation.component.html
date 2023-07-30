@@ -20,7 +20,7 @@
         *ngIf="isHandset()">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>my-budget-ui</span>
+      <span>My Budget {{this.navigationTitle()}}</span>
     </mat-toolbar>
     <div class="content-container">
       <ng-content></ng-content>

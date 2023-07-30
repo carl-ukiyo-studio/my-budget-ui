@@ -5,8 +5,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
-import { NgIf } from "@angular/common";
-import { RouterLink } from "@angular/router";
+import { NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-navigation',
@@ -20,23 +20,22 @@ import { RouterLink } from "@angular/router";
     MatListModule,
     MatIconModule,
     NgIf,
-    RouterLink
-  ]
+    RouterLink,
+  ],
 })
 export class NavigationComponent implements OnInit {
   private breakpointObserver = inject(BreakpointObserver);
 
   isHandset = signal(false);
+  navigationTitle = signal('July 2023');
 
   ngOnInit() {
     this.initBreakpointObserver();
   }
 
   private initBreakpointObserver() {
-    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(
-      bs => {
-        this.isHandset.set(bs.matches)
-      }
-    )
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe((bs) => {
+      this.isHandset.set(bs.matches);
+    });
   }
 }

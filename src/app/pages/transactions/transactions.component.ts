@@ -31,52 +31,19 @@ import { TransactionService } from './transactions-service.service';
 })
 export class TransactionsComponent implements OnInit {
   transactionService = inject(TransactionService);
+
   transactions: WritableSignal<Transaction[]> = signal([]);
-  selectedDate: WritableSignal<string> = signal('');
-  selectedMonth: WritableSignal<string> = signal('');
   income: Signal<Transaction[]> = computed(() =>
     this.transactions().filter((t) => t.type === 'income'),
   );
-  filteredIncome: Signal<Transaction[]> = computed(() => {
-    // return this.selectedDate
-    //   ? this.income().filter((income) => income.date === this.selectedDate())
-    //   : this.income();
-    return this.selectedMonth()
-      ? this.income().filter((income) => income.date === this.selectedMonth())
-      : this.income();
-  });
   expenses: Signal<Transaction[]> = computed(() =>
     this.transactions().filter((t) => t.type === 'expense'),
   );
-  filteredExpenses: Signal<Transaction[]> = computed(() => {
-    // return this.selectedDate
-    //   ? this.expenses().filter(
-    //       (expense) => expense.date === this.selectedDate(),
-    //     )
-    //   : this.expenses();
-    return this.selectedMonth()
-      ? this.expenses().filter(
-          (expense) => expense.date === this.selectedMonth(),
-        )
-      : this.expenses();
-  });
 
   groupedTransactions: Signal<GroupedTransaction[]> = computed(() => {
     return this.groupTransactionsByDate();
   });
-
-  filteredGroupedTransactions: Signal<GroupedTransaction[]> = computed(() => {
-    // return this.selectedDate
-    //   ? this.groupedTransactions().filter(
-    //       (group) => group.date === this.selectedDate(),
-    //     )
-    //   : this.groupedTransactions();
-    return this.selectedMonth()
-      ? this.groupedTransactions().filter((group) =>
-          group.date.startsWith(this.selectedMonth()),
-        )
-      : this.groupedTransactions();
-  });
+  selectedDate: WritableSignal<string> = signal('');
 
   ngOnInit() {
     this.transactions.set(this.transactionService.getTransactions());
@@ -96,13 +63,5 @@ export class TransactionsComponent implements OnInit {
     });
 
     return groupedTransactions;
-  }
-
-  onDateChange(event: any) {
-    this.selectedDate.set(event.target.value);
-  }
-
-  onMonthChange(event: any) {
-    this.selectedMonth.set(event.target.value);
   }
 }
