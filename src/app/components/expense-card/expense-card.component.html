@@ -1,0 +1,12 @@
+<div class="card">
+  <div class="card-header">
+    {{ expense.name }}
+  </div>
+  <div class="card-body">
+    <p><strong>Expense ID:</strong> {{ expense.expenseId }}</p>
+    <p><strong>Amount:</strong> {{ expense.amount }}</p>
+    <p><strong>Category:</strong> {{ expense.category }}</p>
+    <p><strong>Date:</strong> {{ expense.date | date }}</p>
+    <p><strong>Created At:</strong> {{ expense.createdAt | date }}</p>
+  </div>
+</div>
