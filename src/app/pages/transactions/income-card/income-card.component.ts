@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Income } from "../../interfaces/Income";
+import { Income } from "../../../models/Income";
 
 @Component({
   selector: 'app-income-card',

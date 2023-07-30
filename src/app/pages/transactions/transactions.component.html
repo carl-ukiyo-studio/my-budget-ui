@@ -1,0 +1,34 @@
+<div>
+  <div class="container">
+    <div class="list">
+      <h1>Expenses</h1>
+      <app-transaction-card
+        *ngFor="let expense of filteredExpenses()"
+        [transaction]="expense"
+      />
+    </div>
+
+    <div class="list">
+      <h1>Income</h1>
+      <app-transaction-card
+        *ngFor="let income of filteredIncome()"
+        [transaction]="income"
+      />
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="list">
+    <h1>Transactions</h1>
+<!--    <input type="date" (change)="onDateChange($event)" />-->
+    <input type="month" (change)="onMonthChange($event)" />
+    <ng-container *ngFor="let group of filteredGroupedTransactions()">
+      <h2>{{ group.date }}</h2>
+      <app-transaction-card
+        *ngFor="let transaction of group.transactions"
+        [transaction]="transaction"
+      ></app-transaction-card>
+    </ng-container>
+  </div>
+</div>

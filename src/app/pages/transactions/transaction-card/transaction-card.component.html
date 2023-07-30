@@ -1,0 +1,17 @@
+<div class="card">
+  <!-- Left side: Image icon -->
+  <div class="icon">
+    <img src="{{ transaction.image }}" alt="Icon">
+  </div>
+
+  <!-- Center: Main text and sub text -->
+  <div class="content">
+    <div class="main-text">{{ transaction.description }}</div>
+    <div class="sub-text">{{ transaction.note }}</div>
+  </div>
+
+  <!-- Right side: Number (Add the appropriate class based on the type) -->
+  <div class="number" [ngClass]="{ 'income': transaction.type === 'income', 'expense': transaction.type === 'expense' }">
+    {{ transaction.amount | numberWithSign }}
+  </div>
+</div>
