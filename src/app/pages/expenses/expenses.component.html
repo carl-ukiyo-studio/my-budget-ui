@@ -1,1 +1,30 @@
-<p>expenses works!</p>
+<div class="expenses">
+  <h1>Expenses</h1>
+
+  <table>
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Amount</th>
+      <th>Date</th>
+      <th>Category</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let expense of expenses()">
+      <td>{{ expense.name }}</td>
+      <td>${{ expense.amount }}</td>
+      <td>{{ expense.date | date }}</td>
+      <td><span class="category-chip">{{ expense.category }}</span></td>
+    </tr>
+    </tbody>
+  </table>
+
+  <div class="add-expense">
+    <input [(ngModel)]="newExpense.name" placeholder="Name" />
+    <input [(ngModel)]="newExpense.amount" placeholder="Amount" type="number" />
+    <input [(ngModel)]="newExpense.date" placeholder="Date (yyyy-mm-dd)" type="date" />
+    <input [(ngModel)]="newExpense.category" placeholder="Category" />
+    <button (click)="addExpense()">Add Expense</button>
+  </div>
+</div>

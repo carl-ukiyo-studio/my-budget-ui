@@ -1,0 +1,66 @@
+.expenses {
+  padding: 20px;
+  background-color: #1d1d1f;
+  color: white;
+  min-height: 100vh;
+}
+
+.expenses h1 {
+  text-align: center;
+  color: #a9a9a9;
+}
+
+.expenses table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 15px;
+}
+
+.expenses th,
+.expenses td {
+  padding: 20px;
+  text-align: left;
+}
+
+.expenses th {
+  color: #a9a9a9;
+}
+
+.expenses td {
+  background-color: #2c2c2e;
+  color: #a9a9a9;
+  border-radius: 15px;
+}
+
+.category-chip {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 15px;
+  background-color: #0a84ff;
+  color: white;
+}
+
+.add-expense {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.add-expense input {
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  background-color: #2c2c2e;
+  color: white;
+}
+
+.add-expense button {
+  background-color: #0a84ff;
+  color: white;
+  border: none;
+  padding: 20px;
+  border-radius: 15px;
+  cursor: pointer;
+  grid-column: span 4;
+}
