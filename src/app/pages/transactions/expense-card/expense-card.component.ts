@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Expense } from "../../interfaces/Expense";
+import { Expense } from "../../../models/Expense";
 
 @Component({
   selector: 'app-expense-card',

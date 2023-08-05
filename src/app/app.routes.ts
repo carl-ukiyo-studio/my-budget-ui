@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
-import { OverviewComponent } from "./components/overview/overview.component";
-import { TransactionsComponent } from "./components/transactions/transactions.component";
-import { SettingsComponent } from "./components/settings/settings.component";
+import { OverviewComponent } from "./pages/overview/overview.component";
+import { TransactionsComponent } from "./pages/transactions/transactions.component";
+import { SettingsComponent } from "./pages/settings/settings.component";
 
 export const routes: Routes = [
   {path: '', component: OverviewComponent},

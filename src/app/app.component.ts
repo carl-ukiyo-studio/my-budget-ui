@@ -1,7 +1,7 @@
   import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterOutlet } from '@angular/router';
-  import { OverviewComponent } from "./components/overview/overview.component";
+  import { OverviewComponent } from "./pages/overview/overview.component";
   import { NavigationComponent } from "./components/navigation/navigation.component";
 
 @Component({
